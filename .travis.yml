@@ -1,1 +1,10 @@
 language: java
+install: curl https://raw.githubusercontent.com/meles-software/meles-maven-settings/0.1/settings.xml
+  > settings.xml
+script: mvn clean deploy --settings settings.xml
+after_script:
+- mvn site -Dgithub.global.oauth2Token=${GITHUB_TOKEN}
+jdk:
+- openjdk7
+env:
+  secure: OcqANr8Q9ntExE67EMwyy+4lqW+JByvyF21xj43mDV3iOjFgvmb6AkAL1k+7tcXQfLEG/IEULg9apC1L52Nc0jwhwuqA/8dTPoPPnfrTKyQI0PJuqQCNc0Ep/DVek9cEXhitK510PxTmjicJhf7Smt5sX401A349cMkTpByoljQ=
